@@ -14,7 +14,11 @@ public:
     };
 
     int parity(int x){
-        return 0;
+        // the brute force solution is to take bitCount%2, which is not bad
+        // since it's linear in the number of bits set to 1
+        // but I think there should be a way to compute parity in 
+        // constant time?
+        return bitCount(x)%2;
     }
 };
 
