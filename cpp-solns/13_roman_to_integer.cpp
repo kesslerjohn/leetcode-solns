@@ -59,6 +59,7 @@ public:
                 i++;
             }
         }
+        cout << "test" << endl;
         return sum;
     }
 };
