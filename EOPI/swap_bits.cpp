@@ -5,11 +5,14 @@ using namespace std;
 class Solution{
 public:
     int swapBits(int x, int i, int j){
-        int mask = (0b1 << i) & (0b1 << j); // 1s indicate bits to swap
+        if ((x >> i)%2 == (x >> j)%2){
+            return x; // digits are the same
+        }
+        int mask = (0b1 << i) | (0b1 << j); // 1s indicate bits to swap
                                             // if the bits are different, then x ^ mask
                                             // will swap them. Otherwise do nothing.
                                             // creating mask takes O(i + j);  
-        return 0;
+        return x ^ mask;
     }
 
 };
