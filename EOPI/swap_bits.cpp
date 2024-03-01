@@ -6,11 +6,11 @@ class Solution{
 public:
     int swapBits(int x, int i, int j){
         if ((x >> i)%2 == (x >> j)%2){
-            return x; // digits are the same
+            return x; // digits are the same, so swapping them changes nothing
         }
         int mask = (0b1 << i) | (0b1 << j); // 1s indicate bits to swap
                                             // if the bits are different, then x ^ mask
-                                            // will swap them. Otherwise do nothing.
+                                            // will swap them
                                             // creating mask takes O(i + j);  
         return x ^ mask;
     }
