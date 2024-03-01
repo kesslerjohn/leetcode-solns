@@ -7,11 +7,12 @@ public:
     int swapBits(int x, int i, int j){
         if ((x >> i)%2 == (x >> j)%2){
             return x; // digits are the same, so swapping them changes nothing
+                      // checking if they are the same takes O(i + j)
         }
         int mask = (0b1 << i) | (0b1 << j); // 1s indicate bits to swap
                                             // if the bits are different, then x ^ mask
                                             // will swap them
-                                            // creating mask takes O(i + j);  
+                                            // creating mask takes O(i + j) time;  
         return x ^ mask;
     }
 
