@@ -9,16 +9,23 @@ public:
             int bit = x & ~(x-1); // find the smallest bit set to '1'
             x = x - bit; // subtract it from x
             c += 1; // count how many times you do that
+            // The time complexity of this method is linear in the number of bits
+            // set to 1 
         }
         return c;
     };
 
     int parity(int x){
-        // the brute force solution is to take bitCount%2, which is not bad
-        // since it's linear in the number of bits set to 1
-        // but I think there should be a way to compute parity in 
-        // constant time?
-        return bitCount(x)%2;
+        // Since I already have bitCount(n), I could take bitCount(x)%2 if simplicity
+        // is the priority. 
+        // The method below takes the same time complexity but O(1) space
+        // whereas bitCount takes O(log(s)), where s is the number of 1s in x.
+        int res = 0;
+        while (x){
+            res ^= 1;
+            x &= (x-1);
+        }
+        return res;
     }
 };
 
