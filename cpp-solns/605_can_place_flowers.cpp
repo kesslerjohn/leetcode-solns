@@ -8,5 +8,4 @@ public:
     bool canPlaceFlowers(vector<int> &flowerbed, int n){
         return true;
     }
-
 };
