@@ -11,10 +11,11 @@ public:
     }
 };
 
-void main(){
+int main(){
     regex vowel ("[aeiouAEIOU]");
     string userin;
     getline(cin, userin);
     string formatted = regex_replace(userin, vowel, "{}");
     cout << formatted << endl;
+    return 0;
 }
