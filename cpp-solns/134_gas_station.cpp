@@ -27,5 +27,10 @@ public:
 };
 
 int main(int argc, char* argv[]){
+    if (argc < 2){
+        cout << "Please give an input with gas and costs array." << endl;
+        return -1;
+    }
 
+    return 0;
 }
