@@ -24,3 +24,9 @@ public:
         }
     }
 };
+
+int main(){
+    string userin;
+    getline(cin, userin);
+    return 0;
+}
