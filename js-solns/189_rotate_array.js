@@ -14,3 +14,15 @@ var rotateSlow = function(nums, k) {
         rotateOne(nums)
     }
 };
+
+var rotate = function(nums, k) {
+    const sz = nums.length
+    k = k % sz
+    const suffix = nums.slice(sz - k, sz)
+    for (let i = 0; i < (sz-k); i++) {
+        suffix.push(nums[i])
+    }
+    for (let i = 0; i < sz; i++) {
+        nums[i] = suffix[i]
+    }
+}
