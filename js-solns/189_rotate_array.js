@@ -15,6 +15,7 @@ var rotateSlow = function(nums, k) {
     }
 };
 
+// O(n) time and space
 var rotate = function(nums, k) {
     const sz = nums.length
     k = k % sz
